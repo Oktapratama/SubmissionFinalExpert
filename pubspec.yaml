@@ -49,6 +49,7 @@ dependencies:
     path: tv_series
 
 dev_dependencies:
+  bloc_test: ^9.0.2
   mockito: ^5.0.8
   build_runner: ^2.0.4
   flutter_test:
