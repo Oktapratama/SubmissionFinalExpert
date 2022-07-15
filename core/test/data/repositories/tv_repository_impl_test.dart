@@ -184,7 +184,7 @@ void main() {
     final tId = 1;
 
     final tTvResponse = ModelDetailTv(
-      backdropPath: 'backdropPath',
+      // backdropPath: 'backdropPath',
       episodeRunTime: [60],
       firstAirDate: DateTime(2011 - 04 - 17),
       genres: [GenreModel(id: 1, name: 'Action')],

@@ -79,7 +79,7 @@ final testTv = Tv(
 final testTvList = [testTv];
 
 final testTvDetail = DetailTv(
-  backdropPath: 'backdropPath',
+  // backdropPath: 'backdropPath',
   episodeRunTime: [60],
   firstAirDate: DateTime(2011 - 04 - 17),
   genres: [Genre(id: 1, name: 'Action')],

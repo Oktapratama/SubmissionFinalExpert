@@ -5,7 +5,7 @@ import 'package:tv_series/domain/entities/tv/tv_detail.dart';
 class ModelDetailTv extends Equatable {
   ModelDetailTv({
     // required this.adult,
-    required this.backdropPath,
+    // required this.backdropPath,
     required this.episodeRunTime,
     required this.firstAirDate,
     required this.genres,
@@ -32,7 +32,7 @@ class ModelDetailTv extends Equatable {
   });
 
   // final bool adult;
-  final String backdropPath;
+  // final String backdropPath;
   final List<int> episodeRunTime;
   final DateTime firstAirDate;
   final List<GenreModel> genres;
@@ -60,7 +60,7 @@ class ModelDetailTv extends Equatable {
 
   factory ModelDetailTv.fromJson(Map<String, dynamic> json) => ModelDetailTv(
     // adult: json["adult"],
-    backdropPath: json["backdrop_path"],
+    // backdropPath: json["backdrop_path"],
     episodeRunTime: List<int>.from(json["episode_run_time"].map((x) => x)),
     firstAirDate: DateTime.parse(json["first_air_date"]),
     genres: List<GenreModel>.from(json["genres"].map((x) => GenreModel.fromJson(x))),
@@ -87,7 +87,7 @@ class ModelDetailTv extends Equatable {
   );
 
   Map<String, dynamic> toJson() => {
-    "backdrop_path": backdropPath,
+    // "backdrop_path": backdropPath,
     "episode_run_time": List<dynamic>.from(episodeRunTime.map((x) => x)),
     "first_air_date": "${firstAirDate.year.toString().padLeft(4, '0')}-${firstAirDate.month.toString().padLeft(2, '0')}-${firstAirDate.day.toString().padLeft(2, '0')}",
     "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
@@ -115,7 +115,7 @@ class ModelDetailTv extends Equatable {
 
   DetailTv toEntity() {
     return DetailTv(
-        backdropPath: backdropPath,
+        // backdropPath: backdropPath,
         episodeRunTime: episodeRunTime,
         firstAirDate: firstAirDate,
         genres: genres.map((genre) => genre.toEntity()).toList(),
@@ -144,7 +144,7 @@ class ModelDetailTv extends Equatable {
 
   @override
   List<Object?> get props => [
-    backdropPath,
+    // backdropPath,
     episodeRunTime,
     firstAirDate,
     genres,

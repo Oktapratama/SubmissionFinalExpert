@@ -27,6 +27,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException catch (e) {
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
     }
   }
 
@@ -94,7 +96,7 @@ class TvRepositoryImpl implements TvRepository {
   Future<Either<Failure, String>> saveWatchlist(DetailTv tv) async {
     try {
       final result =
-      await localDataSourceTv.insertWatchlistTv(TableTv.fromEntity(tv));
+          await localDataSourceTv.insertWatchlistTv(TableTv.fromEntity(tv));
       return Right(result);
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
@@ -107,7 +109,7 @@ class TvRepositoryImpl implements TvRepository {
   Future<Either<Failure, String>> removeWatchlist(DetailTv tv) async {
     try {
       final result =
-      await localDataSourceTv.removeWatchlistTv(TableTv.fromEntity(tv));
+          await localDataSourceTv.removeWatchlistTv(TableTv.fromEntity(tv));
       return Right(result);
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
