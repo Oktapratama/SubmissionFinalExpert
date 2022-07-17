@@ -9,7 +9,7 @@ import 'package:tv_series/domain/entities/tv/tv_detail.dart';
 final testMovie = Movie(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-  genreIds: [14, 28],
+  genreIds: const [14, 28],
   id: 557,
   originalTitle: 'Spider-Man',
   overview:
@@ -47,7 +47,7 @@ final testWatchlistMovie = Movie.watchlist(
   overview: 'overview',
 );
 
-final testMovieTable = MovieTable(
+const testMovieTable = MovieTable(
   id: 1,
   title: 'title',
   posterPath: 'posterPath',
@@ -82,7 +82,7 @@ final testTvDetail = DetailTv(
   // backdropPath: 'backdropPath',
   episodeRunTime: [60],
   firstAirDate: DateTime(2011 - 04 - 17),
-  genres: [Genre(id: 1, name: 'Action')],
+  genres: const [Genre(id: 1, name: 'Action')],
   homepage: 'homepage',
   id: 1,
   inProduction: false,
@@ -104,7 +104,7 @@ final testTvDetail = DetailTv(
   voteCount: 1,
 );
 
-final testTvTable = TableTv(
+const testTvTable = TableTv(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',
