@@ -24,11 +24,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.getNowPlayingTv();
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -38,11 +38,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.getTvDetail(id);
       return Right(result.toEntity());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -52,11 +52,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.getTvRecommendations(id);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -66,11 +66,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.getPopularTv();
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -80,11 +80,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.getTopRatedTv();
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -94,11 +94,11 @@ class TvRepositoryImpl implements TvRepository {
       final result = await remoteDataSource.searchTv(query);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
-      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED\n${e.message}'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException{
+      return const Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
