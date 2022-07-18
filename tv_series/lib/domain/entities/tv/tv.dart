@@ -25,7 +25,7 @@ class Tv extends Equatable {
   });
 
   String? backdropPath;
-  //DateTime? firstAirDate;
+  DateTime? firstAirDate;
   List<int>? genreIds;
   int id;
   String? name;
@@ -41,7 +41,7 @@ class Tv extends Equatable {
   @override
   List<Object?> get props => [
     backdropPath,
-    //firstAirDate,
+    firstAirDate,
     genreIds,
     id,
     name,

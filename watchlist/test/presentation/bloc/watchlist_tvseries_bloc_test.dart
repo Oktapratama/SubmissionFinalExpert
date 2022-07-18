@@ -9,6 +9,7 @@ import 'package:watclist/domain/tvseries/get_watchlist_tv.dart';
 import 'package:watclist/domain/tvseries/remove_watchlist_tv.dart';
 import 'package:watclist/domain/tvseries/save_watchlist_tv.dart';
 import 'package:watclist/presentation/pages/bloc/watchlist_tv/watchlist_tvseries_bloc.dart';
+import '../../dummy_data/dummy_object_tv.dart';
 import '../../dummy_data/dummy_objects.dart';
 import 'watchlist_tvseries_bloc_test.mocks.dart';
 
